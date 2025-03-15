@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #d9c7c7;
     --foreground: #ededed;
   }
 }
@@ -23,4 +23,58 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUp 1s ease-out;
+}
+
+.birthday-card {
+  position: relative;
+  text-align: center;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+}
+
+.message {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.confetti {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti::before,
+.confetti::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: red;
+  animation: confetti 5s linear infinite;
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
 }
