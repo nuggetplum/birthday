@@ -1,6 +1,5 @@
 import Image from "next/image";
-import BirthdayCard from "./BirthdayCard";
-import Confetti from "./Confetti";
+
 
 
 export default function Home() {
